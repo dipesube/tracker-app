@@ -21,7 +21,7 @@ const Country = () => {
 
 
     return (
-        <FormControl className={styles.FormControl}>
+        <FormControl className={styles.formControl} >
             <NativeSelect>
                 <option value="global">Global</option>
                 {allCountries.map((country, i) =>

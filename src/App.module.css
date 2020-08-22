@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(250, 250, 250);
+    background-color:lightcyan;
 }
 
 .container{
@@ -7,4 +7,16 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.image{
+    height: 50%;
+    width: 25%;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.pad{
+    height: 50%;
+    width: 50%;
 }
