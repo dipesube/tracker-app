@@ -13,6 +13,7 @@ class App extends React.Component {
 
     state = {
         data: {},
+        country: '',
     }
 
     async componentDidMount() {
@@ -20,14 +21,21 @@ class App extends React.Component {
         this.setState({ data })
     }
 
+    handleCountryChange = async (country) => {
+        const data = await getData(country)
+        console.log(data)
+        this.setState({ data, country })
+    }
+
     render() {
-        const { data } = this.state;
+        const { data, country } = this.state;
+
         return (
             <div className={styles.container}>
                 <img className={styles.image} src={image} alt="COVID-19" />
                 <Cards data={data} />
-                <Country className={styles.pad} />
-                <Chart />
+                <Country className={styles.pad} handleCountryChange={this.handleCountryChange} />
+                <Chart data={data} country={country} />
 
             </div>
         )
